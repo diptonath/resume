@@ -63,6 +63,12 @@ $(document).click(function (e) {
         window.open('https://twitter.com/intent/tweet?text=' + text + '&url=' + url, 'twitter-share-dialog', 'width=626,height=436');
     });
 
+    $("#linkedinShare").click(function () {
+        // Replace 'your-url' with the URL you want to share on LinkedIn
+        var url = encodeURIComponent('your-url');
+        window.open('https://www.linkedin.com/shareArticle?mini=true&url=' + url, 'linkedin-share-dialog', 'width=626,height=436');
+    });
+
     // Add more click event handlers for additional social platforms
 });
 
