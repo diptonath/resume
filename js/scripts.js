@@ -32,3 +32,39 @@ window.addEventListener('DOMContentLoaded', event => {
     });
 
 });
+
+
+$(document).ready(function () {
+    $("#shareButton").click(function () {
+      $("#sharePopup").toggle();
+});
+
+    // Close the popup when clicking outside of it
+$(document).click(function (e) {
+        if (!$(e.target).closest("#shareButton, #sharePopup").length) {
+            $("#sharePopup").hide();
+        }
+    });
+
+    // Prevent the popup from closing when clicking inside it
+    $("#sharePopup").click(function (e) {
+        e.stopPropagation();
+    });
+
+    // Add specific functionality for each social share button
+    $("#facebookShare").click(function () {
+        var url = encodeURIComponent('your-url');
+        window.open('https://www.facebook.com/sharer/sharer.php?u=' + url, 'facebook-share-dialog', 'width=626,height=436');
+    });
+
+    $("#twitterShare").click(function () {
+        var text = encodeURIComponent('your-text');
+        var url = encodeURIComponent('your-url');
+        window.open('https://twitter.com/intent/tweet?text=' + text + '&url=' + url, 'twitter-share-dialog', 'width=626,height=436');
+    });
+
+    // Add more click event handlers for additional social platforms
+});
+
+
+
