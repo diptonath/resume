@@ -64,18 +64,22 @@ $(document).click(function (e) {
     });
 
     $("#linkedinShare").click(function () {
-        // Replace 'your-url' with the URL you want to share on LinkedIn
         var url = encodeURIComponent('your-url');
-        window.open('https://www.linkedin.com/shareArticle?mini=true&url=' + url, 'linkedin-share-dialog', 'width=626,height=436');
+        var title = encodeURIComponent('your-title'); // Add a title parameter if needed
+        window.open('https://www.linkedin.com/shareArticle?mini=true&url=' + url + '&title=' + title, 'linkedin-share-dialog', 'width=626,height=436');
     });
 
 
     $("#copyLink").click(function () {
-        var copyText = document.getElementById("shareableLink");
-        copyText.select();
-        document.execCommand("copy");
-        alert("Link copied to clipboard!");
-    });
+        var shareableLink = document.getElementById("shareableLink");
+        navigator.clipboard.writeText(shareableLink.value)
+          .then(function () {
+            alert("Link copied to clipboard!");
+          })
+          .catch(function (err) {
+            console.error('Unable to copy text to clipboard', err);
+          });
+      });
 
     // Add more click event handlers for additional social platforms
 });
