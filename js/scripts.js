@@ -69,6 +69,14 @@ $(document).click(function (e) {
         window.open('https://www.linkedin.com/shareArticle?mini=true&url=' + url, 'linkedin-share-dialog', 'width=626,height=436');
     });
 
+
+    $("#copyLink").click(function () {
+        var copyText = document.getElementById("shareableLink");
+        copyText.select();
+        document.execCommand("copy");
+        alert("Link copied to clipboard!");
+    });
+
     // Add more click event handlers for additional social platforms
 });
 
