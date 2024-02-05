@@ -54,7 +54,7 @@ $(document).click(function (e) {
     // Add specific functionality for each social share button
     $("#facebookShare").click(function () {
         var url = encodeURIComponent('your-url');
-        window.open('https://www.facebook.com/sharer/sharer.php?u=' + url, 'facebook-share-dialog', 'width=626,height=436');
+        window.open('https://www.facebook.com/sharer/sharer.php?u=https://diptonath.github.io/resume/', 'facebook-share-dialog', 'width=626,height=436');
     });
 
     $("#twitterShare").click(function () {
@@ -66,20 +66,10 @@ $(document).click(function (e) {
     $("#linkedinShare").click(function () {
         var url = encodeURIComponent('your-url');
         var title = encodeURIComponent('your-title'); // Add a title parameter if needed
-        window.open('https://www.linkedin.com/shareArticle?mini=true&url=' + url + '&title=' + title, 'linkedin-share-dialog', 'width=626,height=436');
+        window.open('https://www.linkedin.com/shareArticle?url=https://diptonath.github.io/resume/', 'linkedin-share-dialog', 'width=626,height=436');
     });
 
 
-    $("#copyLink").click(function () {
-        var shareableLink = document.getElementById("shareableLink");
-        navigator.clipboard.writeText(shareableLink.value)
-          .then(function () {
-            alert("Link copied to clipboard!");
-          })
-          .catch(function (err) {
-            console.error('Unable to copy text to clipboard', err);
-          });
-      });
 
     // Add more click event handlers for additional social platforms
 });
