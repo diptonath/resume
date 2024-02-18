@@ -255,5 +255,31 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
+
+        <script>
+
+            // Registration Shareing Output Js
+const form = document.getElementById('myForm');
+
+// Add submit event listener
+form.addEventListener('submit', function(event) {
+// Prevent default form submission
+event.preventDefault();
+
+// Get input values
+const name = document.getElementById('name').value;
+const email = document.getElementById('email').value;
+const phone = document.getElementById('phone').value;
+
+// Process input and generate output
+const output = `Hello, ${name}! Your email is: ${email} Your phone number is: ${phone}`;
+
+// Display output on the web page
+document.getElementById('output').textContent = output;
+
+});
+
+        </script>
+
     </body>
 </html>
