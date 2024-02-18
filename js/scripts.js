@@ -33,7 +33,7 @@ window.addEventListener('DOMContentLoaded', event => {
 
 });
 
-
+// Social Shareing Js
 $(document).ready(function () {
     $("#shareButton").click(function () {
       $("#sharePopup").toggle();
@@ -75,4 +75,24 @@ $(document).click(function (e) {
 });
 
 
+// Registration Shareing Output Js
+const form = document.getElementById('myForm');
 
+    // Add submit event listener
+form.addEventListener('submit', function(event) {
+    // Prevent default form submission
+    event.preventDefault();
+
+    // Get input values
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const phone = document.getElementById('phone').value;
+
+    // Process input and generate output
+    const output = `Hello, ${name}! Your email is: ${email} Your phone number is: ${phone}`;
+
+    // Display output on the web page
+    document.getElementById('output').textContent = output;
+
+});
+ 
